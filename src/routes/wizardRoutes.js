@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 const wizardController = require("../controllers/wizardController");
 const upload = require("../config/upload.js"); // crie a pasta middleware e o arquivo upload.js
+const apikeyMiddleware = require("../config/apiKey.js"); // crie a pasta middleware e o arquivo apiKey.js
 
+router.use(apikeyMiddleware); // Adiciona o middleware de autenticação de chave de API a todas as rotas
 /**
  * @swagger
  * tags:
